@@ -1,0 +1,199 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+form input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 0.8rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #007bff;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+}
+
+.secondary-btn {
+    background: #28a745;
+}
+
+.secondary-btn:hover {
+    background: #218838;
+}
+
+p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Password Container */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Ocultar o formulário de registro inicialmente */
+.hidden {
+    display: none;
+}
+
+/* Botão Entrar como Visitante */
+.visitor-btn {
+    background: #6c757d; /* Cinza para diferenciar */
+    color: white;
+    padding: 0.8rem;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.visitor-btn:hover {
+    background: #5a6268; /* Sombreamento no hover */
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Sobrepor ao restante */
+}
+
+.popup.hidden {
+    display: none; /* Ocultar quando não estiver visível */
+}
+
+.popup-content {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.popup-content p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.popup-content button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+/* Botão "Sim, continuar" */
+.popup-content .primary-btn {
+    background: #007bff;
+}
+
+.popup-content .primary-btn:hover {
+    background: #0056b3;
+}
+
+/* Botão "Cancelar" */
+.popup-content .secondary-btn {
+    background: #6c757d;
+}
+
+.popup-content .secondary-btn:hover {
+    background: #5a6268;
+}
+

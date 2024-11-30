@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTCC - Home</title>
+    <link rel="stylesheet" href="styles/inicio.css">
+</head>
+<body>
+    <!-- Menu dinâmico -->
+    <header id="menu"></header>
+
+    <!-- Campo de pesquisa -->
+    <section id="pesquisa">
+        <form id="form-pesquisa">
+            <input type="text" id="termo-pesquisa" placeholder="Pesquisar TCCs...">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </section>
+
+    <!-- Bloco cinza contendo os TCCs -->
+    <section id="lista-tccs-container">
+        <div id="lista-tccs">
+            <!-- Os TCCs serão inseridos aqui pelo JavaScript -->
+        </div>
+    </section>
+
+    <!-- Rodapé dinâmico -->
+    <div id="rodape"></div>
+
+    <script>
+        function loadComponent(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                })
+                .catch(error => console.error(`Erro ao carregar ${url}:`, error));
+        }
+        loadComponent('menu', 'menu.html');
+        loadComponent('rodape', 'rodape.html');
+    </script>
+    <script src="scripts/inicio.js"></script>
+</body>
+</html>

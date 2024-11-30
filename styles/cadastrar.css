@@ -1,0 +1,59 @@
+/* Estilo da página de cadastro */
+main {
+    max-width: 600px;
+    margin: 80px auto; /* Para compensar o menu fixo */
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0056b3;
+    transition: background 0.3s;
+}
+
+#drop-area {
+    margin-top: 1rem;
+    padding: 2rem;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    text-align: center;
+    background: #f0f8ff;
+    cursor: pointer;
+}
+
+#drop-area:hover {
+    background: #e6f0ff;
+}

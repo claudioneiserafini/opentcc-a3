@@ -1,0 +1,93 @@
+/* Estilo para o campo de pesquisa */
+#pesquisa {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 2rem; /* Espaçamento maior entre o menu e a pesquisa */
+}
+
+#pesquisa input {
+    width: 500px; /* Campo maior */
+    padding: 0.8rem;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#pesquisa button {
+    padding: 0.8rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#pesquisa button:hover {
+    background: #0056b3;
+}
+
+/* Bloco cinza contendo os TCCs */
+#lista-tccs-container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto; /* Centralizar o bloco */
+}
+
+#lista-tccs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Estilo para os cards de TCC */
+.tcc-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o botão fique alinhado no final */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tcc-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tcc-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Faz o texto ocupar o espaço disponível */
+}
+
+.tcc-card a {
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    align-self: flex-start; /* Garante que o botão não expanda horizontalmente */
+}
+
+/* Hover nos cards */
+.tcc-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.tcc-card a:hover {
+    background: #218838;
+}
+

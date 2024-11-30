@@ -1,0 +1,35 @@
+/* Estilo da página de detalhes */
+main {
+    max-width: 800px;
+    margin: 80px auto; /* Para compensar o menu fixo */
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#detalhes-tcc h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#detalhes-tcc p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+#detalhes-tcc a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#detalhes-tcc a:hover {
+    background: #218838;
+}

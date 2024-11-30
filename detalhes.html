@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTCC - Detalhes</title>
+    <link rel="stylesheet" href="styles/detalhes.css">
+
+</head>
+<body>
+    <!-- Menu dinâmico -->
+    <header id="menu"></header>
+
+    <!-- Detalhes do TCC -->
+    <main>
+        <section id="detalhes-tcc">
+            <!-- Os detalhes do TCC serão inseridos aqui pelo JavaScript -->
+        </section>
+    </main>
+
+    <!-- Rodapé dinâmico -->
+    <div id="rodape"></div>
+
+    <!-- Script para carregar menu e rodapé -->
+    <script>
+        function loadComponent(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                })
+                .catch(error => console.error(`Erro ao carregar ${url}:`, error));
+        }
+        loadComponent('menu', 'menu.html');
+        loadComponent('rodape', 'rodape.html');
+    </script>
+    <script src="scripts/detalhes.js"></script>
+</body>
+</html>

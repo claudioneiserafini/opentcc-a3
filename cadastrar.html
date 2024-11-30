@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenTCC - Cadastrar TCC</title>
+    <link rel="stylesheet" href="styles/cadastrar.css">
+</head>
+<body>
+    <!-- Menu dinâmico -->
+    <header id="menu"></header>
+
+    <!-- Formulário de Cadastro -->
+    <main>
+        <h1>Cadastrar Novo TCC</h1>
+        <form id="form-cadastro" enctype="multipart/form-data">
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" name="autor" placeholder="Nome do autor" required>
+
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Título do TCC" required>
+
+            <label for="resumo">Resumo:</label>
+            <textarea id="resumo" name="resumo" placeholder="Resumo do TCC" rows="5" required></textarea>
+
+            <label for="arquivo">Arquivo PDF:</label>
+            <div id="drop-area">
+                <p>Arraste e solte o arquivo PDF aqui ou clique para selecionar</p>
+                <input type="file" id="arquivo" name="arquivo" accept="application/pdf" required>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+
+    <!-- Rodapé dinâmico -->
+    <div id="rodape"></div>
+
+    <!-- Scripts -->
+    <script>
+        function loadComponent(id, url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                })
+                .catch(error => console.error(`Erro ao carregar ${url}:`, error));
+        }
+        loadComponent('menu', 'menu.html');
+        loadComponent('rodape', 'rodape.html');
+    </script>
+    <script src="scripts/cadastrar.js"></script>
+</body>
+</html>
