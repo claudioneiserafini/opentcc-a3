@@ -1,0 +1,58 @@
+services:
+  app:
+    build: .
+    container_name: tcc-web
+    ports:
+      - "3000:3000" # Mapeia a porta 3000 do contêiner para a porta 3000 do host
+    environment:
+      - MYSQL_HOST=tcc-db # Nome do serviço do MySQL
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=gerenciador_tccs # Você pode escolher uma base de dados padrão
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  frontend:
+    image: node:alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3001:3001"
+    command: npx http-server . -p 3001 -a 0.0.0.0
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.4.3
+    container_name: tcc-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: gerenciador_tccs
+      MYSQL_PASSWORD: admin
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
